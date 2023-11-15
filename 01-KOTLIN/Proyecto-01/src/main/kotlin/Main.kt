@@ -1,10 +1,10 @@
 import java.util.*
 
-fun main(args: Array<String>){
+fun main(args: Array<String>) {
     println("Hello Word!")
 
     //INMUTABLES (NO SE REASIGNAN "=")
-    val inmutable: String ="Adrian";
+    val inmutable: String = "Adrian";
 
     //MUTABLES (Re asignar)
     var mutable: String = "Vicente";
@@ -28,14 +28,16 @@ fun main(args: Array<String>){
 
     //SWITCH
     val estadoCivilWhen = "C"
-    when (estadoCivilWhen){
+    when (estadoCivilWhen) {
         ("C") -> {
             println("Casado")
 
         }
+
         "S" -> {
             println("Soltero")
         }
+
         else -> {
             println("No sabemos")
         }
@@ -44,15 +46,15 @@ fun main(args: Array<String>){
     val coqueteo = if (esSoltero) "Si" else "No"
 
     calcularSueldo(10.00)
-    calcularSueldo(10.00,15.00,20.00)
+    calcularSueldo(10.00, 15.00, 20.00)
     calcularSueldo(10.00, bonoEspecial = 20.00) //Named Parameters
-    calcularSueldo(bonoEspecial = 20.00, sueldo=10.00, tasa=14.00) //Parametros
-
+    calcularSueldo(bonoEspecial = 20.00, sueldo = 10.00, tasa = 14.00) //Parametros
 }
+
 abstract class NumerosJava{
     protected val numeroUno: Int
     private val numeroDos: Int
-    constructor(
+    constructor( //no es el constructo primario
         uno: Int,
         dos: Int
     ){
@@ -63,40 +65,64 @@ abstract class NumerosJava{
     }
 }
 
+//CLase con kotlin
+abstract class Numeros(//Constructor PRIMARIO)
+    //Notas utiles
+    //uno: Int, (Parametro (sin modificador de accseso))
+    //private var uno: Int, //Propiedad Publica Clase numeros.uno
+    //var uno: Int, //Propiedad de la clase (por defecto es pUBLIC=
+    //public var uno; Int,
 
 
+    //PROPIEDADES DE LA CLASE
+    protected val numeroUno: Int, //Propiedad de la clase protected numeros.numeroUno
+    protected val numeroDos: Int,// Propiedad de la clase protected numeros.numerosDos
+) {
+    //var cedula: string= "" (public es por defecto)
+    //private valorCalculado:  Int = 0 (private)
 
-
-
-
-
-
-
-
-
-
-
-
-
-//void -> Unit
-fun imprimirNombre(nombre: String): Unit{
-    //"Nombre : "+nombre
-    println("Nombre : ${nombre}") //template Strings
-
-}
-fun calcularSueldo(
-    sueldo: Double, //Requerido
-    tasa: Double = 12.00, //Opcional (defecto)
-    bonoEspecial: Double? = null, //Opcion null->nullable
-
-): Double{
-    //Int -> Int? (nullable)
-    //String -> sTRING? ( nullable)
-    //Date -> Date? nullable
-    if(bonoEspecial == null){
-        return sueldo*(100/tasa)
-    }else{
-        return sueldo*(100/tasa)+ bonoEspecial
+    init {
+        this.numeroUno; this.numeroDos; //this es opcional
+        numeroUno; numeroDos;//sin el this, eslo mismo
+        println("Inicializando")
     }
 }
+//heredando
+class Suma ( //Constructor primario Suma
+    unoParametro: Int, //Parametro
+    dosParametro: Int, //Parametro
+): Numeros(unoParametro,dosParametro){ // Extendiendo y mandano los paramateros (super)
+    init{ //Bloque codigo constructor primario
+        this.numeroUno
+        this.numeroDos
+    }
+}
+
+
+
+
+    //void -> Unit
+    fun imprimirNombre(nombre: String): Unit {
+        //"Nombre : "+nombre
+        println("Nombre : ${nombre}") //template Strings
+
+    }
+
+    fun calcularSueldo(
+        sueldo: Double, //Requerido
+        tasa: Double = 12.00, //Opcional (defecto)
+        bonoEspecial: Double? = null, //Opcion null->nullable
+
+    ): Double {
+        //Int -> Int? (nullable)
+        //String -> sTRING? ( nullable)
+        //Date -> Date? nullable
+        if (bonoEspecial == null) {
+            return sueldo * (100 / tasa)
+        } else {
+            return sueldo * (100 / tasa) + bonoEspecial
+        }
+    }
+
+
 
