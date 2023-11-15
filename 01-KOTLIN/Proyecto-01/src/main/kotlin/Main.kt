@@ -49,6 +49,11 @@ fun main(args: Array<String>) {
     calcularSueldo(10.00, 15.00, 20.00)
     calcularSueldo(10.00, bonoEspecial = 20.00) //Named Parameters
     calcularSueldo(bonoEspecial = 20.00, sueldo = 10.00, tasa = 14.00) //Parametros
+
+    //usnado instancia de laclase
+    val sumaUno = Suma(1,1)
+    val sumaDos = Suma(null,1)
+    val sumaTres = Suma(1,null)
 }
 
 abstract class NumerosJava{
@@ -96,7 +101,28 @@ class Suma ( //Constructor primario Suma
         this.numeroUno
         this.numeroDos
     }
+
+constructor(//Segundo constructor)
+        uno: Int?, //Parametros
+        dos: Int
+    ): this(
+        if(uno==null) 0 else uno,
+        dos
+    )
+
+constructor(//Tercer constructor)
+    uno: Int,
+    dos: Int?
+
+):this(
+    uno,
+    if(dos==null) 0 else
+    dos,
+
+)
 }
+
+
 
 
 
