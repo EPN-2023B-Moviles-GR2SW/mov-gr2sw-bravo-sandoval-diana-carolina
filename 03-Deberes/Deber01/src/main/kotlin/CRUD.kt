@@ -83,8 +83,9 @@ class CRUD(private val equiposNuevos: MutableList<Equipo>, private val gestionar
 
 
     fun crearEquipo() {
-        println("Ingrese el codigo del equipo")
-        val idEquipo = readLine()?.toIntOrNull() ?: -1
+        /*println("Ingrese el codigo del equipo")
+        val idEquipo = readLine()?.toIntOrNull() ?: -1*/
+
         println("Ingrese el nombre del equipo: ")
         val nombreEquipo = readLine().orEmpty()
         print("Año de Fundación: ")
@@ -99,7 +100,7 @@ class CRUD(private val equiposNuevos: MutableList<Equipo>, private val gestionar
         }
         println("Categoria del equipo: (Segunda,Primera,Maxima)")
         val categoria = readLine().orEmpty()
-        val nuevoEquipo = Equipo(idEquipo, nombreEquipo, anoFundacion, tieneJuvenil, categoria)
+        val nuevoEquipo = Equipo(idEquipo = generarId(equiposNuevos), nombreEquipo, anoFundacion, tieneJuvenil, categoria)
         equiposNuevos.add(nuevoEquipo)
         gestionarArchivos.guardarEquiposArchivo(equiposNuevos)
     }
@@ -230,7 +231,7 @@ class CRUD(private val equiposNuevos: MutableList<Equipo>, private val gestionar
             val equipoEncontrado = buscarEquipoId(equiposNuevos, idSeleccionado)
 
             if (equipoEncontrado != null) {
-               val nuevoJugador = crearJugador()
+                val nuevoJugador = crearJugador()
                 equipoEncontrado.listaJugadores.add(nuevoJugador)
                 gestionarArchivos.guardarEquiposArchivo(equiposNuevos)
                 println("*****************************************************************************************")
@@ -266,6 +267,11 @@ class CRUD(private val equiposNuevos: MutableList<Equipo>, private val gestionar
         val nuevoJugador = Jugador(idJugador, nombreJugador, edad, estatura, numero)
         return nuevoJugador
 
+    }
+
+    private fun generarId(equipos: List<Equipo>): Int {
+        val ultimoId = equipos.maxByOrNull { it.idEquipo ?: 0 }?.idEquipo ?: 0
+        return ultimoId + 1
     }
 
 

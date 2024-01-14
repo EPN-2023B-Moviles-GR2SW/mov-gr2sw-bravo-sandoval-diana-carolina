@@ -6,4 +6,6 @@
      var estatura: Double,
      var numero: Int,
 
-     )
+     ){
+
+ }

@@ -1,7 +1,12 @@
 Identificador Equipo: 1
-Nombre Equipo: Notorious F.C
+Nombre Equipo: Notorious
 Año de Fundacion: 2016
 Tiene Juvenil: No
-Categoria: Primera
+Categoria: Maxima
 **Lista Jugadores**
+  Identificador Jugador: 1
+  Nombre Jugador: Patricio Chugchilan
+  Edad: 29
+  Estatura: 1.75
+  Numero: 8
 
