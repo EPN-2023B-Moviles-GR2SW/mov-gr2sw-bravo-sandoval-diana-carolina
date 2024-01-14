@@ -1,0 +1,7 @@
+Identificador Equipo: 1
+Nombre Equipo: Notorious F.C
+Año de Fundacion: 2016
+Tiene Juvenil: No
+Categoria: Primera
+**Lista Jugadores**
+
