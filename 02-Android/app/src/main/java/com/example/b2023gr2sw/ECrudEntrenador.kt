@@ -7,7 +7,7 @@ import android.widget.EditText
 import androidx.compose.material3.Snackbar
 
 class ECrudEntrenador : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
+    /*override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ecrud_entrenador)
         // Buscar Entrenador
@@ -54,6 +54,6 @@ class ECrudEntrenador : AppCompatActivity() {
                texto,
                Snackbar.LENGTH_LONG).show
         }
-    }
+    }*/
 
 }
