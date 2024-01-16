@@ -39,10 +39,10 @@ class ESqliteHelperEntrenador(contexto: Context?,
         valoresAGuardar.put("descripcion",descripcion)
         val resultadoGuardar = basedatosEscritura.insert(
             "ENTRENADOR",//nombre tabla
-             null, valoresAGuardar
+             null, valoresAGuardar //valores para guardar
             )
-        basedatosEscritura.close()
-        return if (resultadoGuardar.toInt()==-1) false else true
+        basedatosEscritura.close() //cerramos la base  de datos
+        return if (resultadoGuardar.toInt()==-1) false else true //si es igual a -1 nose guarda
     }
 //seusa la base de datos de escritura para la de eliminar y actualizar
     //la funcion eliminar, seusara un booleano para saber si se elimino o no
@@ -54,8 +54,10 @@ class ESqliteHelperEntrenador(contexto: Context?,
         val parametroConsultaDelete = arrayOf(id.toString())
         val resultadoEliminacion = conexionEscritura
             .delete(
+                //en la tabla entrenador vamos a buscar donde el id sea
                 "Entrenador",//nombre tabla
                 "id=?",//consulta wher
+                //para que no nos hagan inyeccion 
             parametroConsultaDelete
             )
         conexionEscritura.close()
@@ -78,9 +80,12 @@ class ESqliteHelperEntrenador(contexto: Context?,
         val parametrosConsultaActualizar = arrayOf(id.toString())
         val resultadoActualizacion  = conexionEscritura.
                 update(
+
+
                     "ENTRENADOR", //nombre tabla
                     valoresAActualizar, //valores
                     "id=?",//consulta where
+                    //para que no puedan hacernos inyeccion sql
                     parametrosConsultaActualizar
                 )
         conexionEscritura.close()
