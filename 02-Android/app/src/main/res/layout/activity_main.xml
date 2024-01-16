@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/id_layout_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_background">
@@ -32,11 +33,11 @@
         android:id="@+id/btn_ir_list_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="24dp"
         android:text="L.View"
         app:layout_constraintBottom_toTopOf="@+id/btn_ciclo_vida"
         app:layout_constraintEnd_toEndOf="@+id/btn_ciclo_vida"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/btn_ciclo_vida" />
 
     <Button
@@ -47,7 +48,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/btn_ciclo_vida"
         app:layout_constraintTop_toTopOf="@+id/btn_ciclo_vida"
         app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="278dp" />
+        tools:layout_editor_absoluteX="289dp" />
 
     <Button
         android:id="@+id/button"
@@ -61,11 +62,33 @@
         android:id="@+id/btn_revcycler_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="12dp"
         android:text="R.View"
         app:layout_constraintBottom_toTopOf="@+id/btn_sqlite"
         app:layout_constraintEnd_toEndOf="@+id/btn_sqlite"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/btn_ir_list_view" />
+
+    <Button
+        android:id="@+id/btn_ir_intent_explicito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="I.EXPLICITO"
+        app:layout_constraintBottom_toTopOf="@+id/btn_ir_intent_implicito"
+        app:layout_constraintEnd_toEndOf="@+id/btn_ir_intent_implicito"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btn_ir_intent_implicito" />
+
+    <Button
+        android:id="@+id/btn_ir_intent_implicito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="I.Implicito"
+        app:layout_constraintBottom_toTopOf="@+id/btn_ir_list_view"
+        app:layout_constraintEnd_toEndOf="@+id/btn_ir_list_view"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="@+id/btn_ir_list_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
