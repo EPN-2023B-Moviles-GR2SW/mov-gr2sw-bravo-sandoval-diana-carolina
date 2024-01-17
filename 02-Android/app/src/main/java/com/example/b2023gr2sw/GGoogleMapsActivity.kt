@@ -15,45 +15,59 @@ class GGoogleMapsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ggoogle_maps)
         solicitarPermisos()
+        iniciarLogicaMapa()
     }
-    fun iniciarLogicaMapa(){
-        val fragmentoMapa = supportFragmentManager.findFragmentById(
-            R.id.map
-        ) as SupportMapFragment
-        fragmentoMapa.getMapAsync{
-            googleMap -> //with(x) => if(X!=null) with
-            (googleMap){
-                mapa=googleMap
-                estableceConfiguracionMapa()
+    fun iniciarLogicaMapa() {
+        val fragmentoMapa = supportFragmentManager
+            .findFragmentById(R.id.map) as SupportMapFragment
+        fragmentoMapa.getMapAsync { googleMap ->
+            // with(X) => if(X != null)
+            with(googleMap) {
+                mapa = googleMap
+                establecerConfiguracionMapa()
             }
         }
     }
 
-    fun estableceConfiguracionMapa(){
-        val contexto = this.applicationContext with(mapa){
-            val permisosFineLocation = ContextCompat.checkSelfPermission(
-                contexto,android.Manifest.permission.ACCESS_FINE_LOCATION
-            )
-            val tienePermisos = permisosFineLocation == PackageManager.PERMISSION_GRANTED
+    fun establecerConfiguracionMapa(){
+        val contexto = this.applicationContext
+        with(mapa) {
+            val permisosFineLocation = ContextCompat
+                .checkSelfPermission(
+                    contexto,
+                    android.Manifest.permission.ACCESS_FINE_LOCATION
+                )
+            val tienePermisos = permisosFineLocation ==
+                    PackageManager.PERMISSION_GRANTED
+            if (tienePermisos) {
+                mapa.isMyLocationEnabled = true //  tenemos permisos
+                uiSettings.isMyLocationButtonEnabled = true
+            }
+            uiSettings.isZoomControlsEnabled = true // Defecto
         }
+
     }
+
     fun solicitarPermisos(){
-            val contexto = this.applicationContext
+        val contexto = this.applicationContext
         val nombrePermiso = android.Manifest.permission.ACCESS_FINE_LOCATION
         val nombrePermisoCoarse = android.Manifest.permission.ACCESS_COARSE_LOCATION
-        val permisosFineLocation = ContextCompat.checkSelfPermission(contexto,
-            //nombre del permiso que va a chekear
-        nombrePermiso)
-        val tienePermisos = permisosFineLocation== PackageManager.PERMISSION_GRANTED
-        if (tienePermisos){
-            permisos=true
-        }else {
+        val permisosFineLocation = ContextCompat
+            .checkSelfPermission(
+                contexto,
+                // permiso que van a checkear
+                nombrePermiso
+            )
+        val tienePermisos = permisosFineLocation == PackageManager.PERMISSION_GRANTED
+        if (tienePermisos) {
+            permisos = true
+        } else {
             ActivityCompat.requestPermissions(
-                this,//Contexto
-                //arelgo de los permisos
-                arrayOf(
-                    nombrePermiso,nombrePermisoCoarse
-                ),1// codigo de peticion de los permisos
+                this, // Contexto
+                arrayOf(  // Arreglo Permisos
+                    nombrePermiso, nombrePermisoCoarse
+                ),
+                1  // Codigo de peticion de los permisos
             )
         }
     }
