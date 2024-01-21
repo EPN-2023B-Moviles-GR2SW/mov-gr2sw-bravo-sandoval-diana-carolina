@@ -78,25 +78,7 @@ class VerJugadores : AppCompatActivity() {
         idItemSeleccionado = arregloViewJugadores[id].idJugador
     }
 
-    /*
-    fun abrirDialogo() {
 
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Eliminar Artista")
-        builder.setMessage("¿Desea eliminar el artista?")
-        builder.setPositiveButton("Sí") { dialog, _ ->
-            if (idItemSeleccionado.let { BasesDatosMemoria.eliminarArtista(it) }) {
-                arregloViewArtista = BasesDatosMemoria.obtenerArtistasGeneroId(idGenero)///este
-                Toast.makeText(this, "Artista eliminado correctamente", Toast.LENGTH_SHORT).show()
-                actualizarListViewArtista()
-            } else {
-                Toast.makeText(this, "Error al eliminar el artista", Toast.LENGTH_SHORT).show()
-            }
-        }
-        builder.setNegativeButton("No", null)
-        val dialogo = builder.create()
-        dialogo.show()
-    }*/
     fun abrirDialogo() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Desea eliminar?")

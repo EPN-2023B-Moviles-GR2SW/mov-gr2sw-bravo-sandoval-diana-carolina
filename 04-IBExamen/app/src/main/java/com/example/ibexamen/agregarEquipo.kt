@@ -26,6 +26,8 @@ class agregarEquipo : AppCompatActivity() {
 
 
 
+
+
             }
             val btnCancelar = findViewById<Button>(R.id.btn_cancelar_equipo)
             btnCancelar.setOnClickListener {
@@ -68,9 +70,11 @@ class agregarEquipo : AppCompatActivity() {
         val id = intent.getIntExtra("idEquipo",-1)
         if(id == -1){
             BaseDatosMemoria.agregarEquipo(nuevoEquipo)
+            mostrarSnackbar("Equipo agregado exitosamente")
         }else{
             nuevoEquipo.idEquipo=id
             BaseDatosMemoria.actualizarEquipo(nuevoEquipo)
+            finish()
         }
 
     }

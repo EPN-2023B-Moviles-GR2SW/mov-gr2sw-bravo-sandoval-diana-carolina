@@ -10,7 +10,7 @@ import android.widget.EditText
 import android.widget.TextView
 
 class agregarJugador : AppCompatActivity() {
-    var idItemSeleccionado =0
+
     lateinit var adaptador: ArrayAdapter<Jugador>
     var equipoCrud = BaseDatosMemoria
 
@@ -92,7 +92,6 @@ class agregarJugador : AppCompatActivity() {
             BaseDatosMemoria.actualizarJugador(nuevoJugador)
 
         }
-        //irActividad(VerGenero::class.java)
 
     }
 

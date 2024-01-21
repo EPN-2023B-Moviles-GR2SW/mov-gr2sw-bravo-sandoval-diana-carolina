@@ -29,14 +29,14 @@ class MainActivity : AppCompatActivity() {
 
         adaptador = ArrayAdapter(
             this, // Contexto
-            android.R.layout.simple_list_item_1, // layout.xml que se va usar
+            android.R.layout.simple_list_item_1, //
             BaseDatosMemoria.arregloBEquipo
         )
         listViewEquipo.adapter = adaptador
         adaptador.notifyDataSetChanged()
 
 
-        //boton crear genero para cambiar de actividad
+
         val botonCrearEquip = findViewById<Button>(R.id.btn_ir_Agregarequipo)
         botonCrearEquip.setOnClickListener {
             irActividad(agregarEquipo::class.java)
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
     override fun onContextItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.mi_VerJugadores -> {
-                //"Hacer algo con: ${idItemSeleccionado}"
+
                 try {
                     val idEquipo = idItemSeleccionado
                     irActividad(VerJugadores::class.java, idEquipo)
@@ -90,7 +90,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    //funcion los menu Genero
+
     override fun onCreateContextMenu(
         menu: ContextMenu?,
         v: View?,
@@ -113,35 +113,23 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    //clase ir actividad
-    class IrActividadEquipo(
-        val context: Context,
-        var callback: (intent: Intent) -> Unit = { }
-    ) {
-        fun cambiarActividad(clase: Class<*>) {
-            val intent = Intent(context, clase)
-            callback(intent)
-            context.startActivity(intent)
-        }
-    }
 
     fun irActividad(clase: Class<*>) {
         val intent = Intent(this, clase)
         // NO RECIBIMOS RESPUESTA
         startActivity(intent)
-        // this.startActivity()
+
     }
 
     fun irActividad(clase: Class<*>, id: Int?) {
         val intent = Intent(this, clase)
-        // NO RECIBIMOS RESPUESTA
+
         intent.putExtra("idEquipo", id)
         startActivity(intent)
-        // this.startActivity()
+
     }
 
 
-    //----------------Metodo actulizar list View
     private fun actualizarListEquipo() {
         val listView = findViewById<ListView>(R.id.lv_listarEquipo)
         val adaptador = ArrayAdapter(

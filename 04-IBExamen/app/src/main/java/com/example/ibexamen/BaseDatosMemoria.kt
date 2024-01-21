@@ -5,22 +5,13 @@ class BaseDatosMemoria {
         val arregloBEquipo = arrayListOf<Equipo>()
         val arregloBJugador = arrayListOf<Jugador>()
 
-        //-----------------Sumar el ID-----------------
+
         var ultimoIdEquipo = 3
         fun agregarEquipo(equipo: Equipo) {
             equipo.idEquipo = ultimoIdEquipo
             arregloBEquipo.add(equipo)
             ultimoIdEquipo++
         }
-
-        var ultimoIdJugador = 3
-        fun agregarJugador(jugador: Jugador) {
-            jugador.idJugador = ultimoIdJugador
-            arregloBJugador.add(jugador)
-            ultimoIdJugador++
-        }
-
-        //------------------------actualizar---------------
         fun actualizarEquipo(equipo: Equipo) {
             var auxIndexEquipo = arregloBEquipo.indexOfFirst {
                 it.idEquipo == equipo.idEquipo
@@ -29,6 +20,37 @@ class BaseDatosMemoria {
                 arregloBEquipo[auxIndexEquipo] = equipo
             }
         }
+        fun obtenerDatosEquipo(id: Int): Equipo? {
+            return arregloBEquipo.firstOrNull {
+                it.idEquipo == id
+            }
+        }
+
+
+
+        fun eliminarEquipo(id: Int): Boolean {
+            val equipoEliminar = arregloBEquipo.find { it.idEquipo == id }
+
+            if (equipoEliminar != null) {
+                arregloBEquipo.remove(equipoEliminar)
+                return true
+            }
+            return false
+
+        }
+
+
+        //////////////////////////////////////////
+
+        var ultimoIdJugador = 3
+        fun agregarJugador(jugador: Jugador) {
+            jugador.idJugador = ultimoIdJugador
+            arregloBJugador.add(jugador)
+            ultimoIdJugador++
+        }
+
+
+
 
         fun actualizarJugador(jugador: Jugador) {
             var auxIndexJugador = arregloBJugador.indexOfFirst {
@@ -40,12 +62,7 @@ class BaseDatosMemoria {
         }
 
 
-        //-----------------------obterner datos------------------
-        fun obtenerDatosEquipo(id: Int): Equipo? {
-            return arregloBEquipo.firstOrNull {
-                it.idEquipo == id
-            }
-        }
+
 
         fun obtenerDatosJugador(id: Int): Jugador? {
             return arregloBJugador.firstOrNull {
@@ -65,18 +82,6 @@ class BaseDatosMemoria {
             return auxArregloJugador
         }
 
-        //----------------------eliminar----------------------------
-        fun eliminarEquipo(id: Int): Boolean {
-            val equipoEliminar = arregloBEquipo.find { it.idEquipo == id }
-
-            if (equipoEliminar != null) {
-                arregloBEquipo.remove(equipoEliminar)
-                return true
-            }
-            return false
-
-        }
-
         fun eliminarJugador(id: Int): Boolean {
             val jugadorEliminar = arregloBJugador.find { it.idJugador == id }
 
@@ -87,7 +92,7 @@ class BaseDatosMemoria {
 
         }
 
-        //-------------------------------------init------------------------
+
         init {
             arregloBEquipo
                 .add(
