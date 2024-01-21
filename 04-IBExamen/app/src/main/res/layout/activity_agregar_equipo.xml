@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".agregarEquipo">
+
+    <EditText
+        android:id="@+id/input_NombreEquipo"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+        android:hint="Nombre"
+        android:inputType="text"
+        android:textColor="#000000"
+        android:textColorHint="#707070"
+        app:layout_constraintBottom_toTopOf="@+id/input_fecha_fundacion"
+        app:layout_constraintEnd_toEndOf="@+id/input_fecha_fundacion"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/input_fecha_fundacion" />
+
+    <EditText
+        android:id="@+id/input_fecha_fundacion"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="52dp"
+        android:ems="10"
+        android:hint="Año Fundacion"
+        android:inputType="text"
+        android:textColor="#000000"
+        android:textColorHint="#707070"
+        app:layout_constraintBottom_toTopOf="@+id/input_categoria"
+        app:layout_constraintEnd_toEndOf="@+id/input_categoria"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/input_categoria" />
+
+    <EditText
+        android:id="@+id/input_categoria"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="80dp"
+        android:ems="10"
+        android:hint="Categoria"
+        android:inputType="text"
+        android:textColor="#000000"
+        android:textColorHint="#707070"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_anadir_Equipo"
+        app:layout_constraintEnd_toEndOf="@+id/btn_anadir_Equipo"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toStartOf="@+id/btn_anadir_Equipo" />
+
+    <Button
+        android:id="@+id/btn_anadir_Equipo"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Crear Equipo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.199"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.684" />
+
+    <Button
+        android:id="@+id/btn_cancelar_equipo"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:text="Cancelar"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_anadir_Equipo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toEndOf="@+id/btn_anadir_Equipo"
+        app:layout_constraintTop_toTopOf="@+id/btn_anadir_Equipo"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/txtTituloCrearEquipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="Crear Equipo"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/input_NombreEquipo"
+        app:layout_constraintEnd_toEndOf="@+id/input_NombreEquipo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/input_NombreEquipo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.107" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
