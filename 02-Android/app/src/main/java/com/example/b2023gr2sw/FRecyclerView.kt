@@ -9,7 +9,7 @@ class FRecyclerView : AppCompatActivity() {
     var totalLikes = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_frecycler_view)
+        setContentView(R.layout.activity_frecycle_view)
         inicializarRecyclerView()
     }
     fun inicializarRecyclerView(){
