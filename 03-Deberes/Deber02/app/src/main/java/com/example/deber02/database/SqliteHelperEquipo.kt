@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.view.contentcapture.ContentCaptureSession
 import androidx.core.content.contentValuesOf
+import com.example.deber02.modelo.Equipo
 
 class SqliteHelperEquipo(contexto:
 Context,): SQLiteOpenHelper(
@@ -88,9 +89,11 @@ Context,): SQLiteOpenHelper(
         return if(resultadoActualizar.toInt()==-1) false else true
     }
 
-    fun consultarEquipobyId(idEquipo: Int):Equipo{
+    fun consultarEquipobyId(idEquipo: Int): Equipo {
         val baseDatosLectura = readableDatabase
-        val scriptConsultaLectura = "SELECT * FROM Equipo WHERE Id_Equipo = ?".trimIndent()
+        val scriptConsultaLectura = """
+            SELECT * FROM EQUIPO WHERE ID_EQUIPO = ?
+        """.trimIndent()
         val parametrosConsultaLectura = arrayOf(idEquipo.toString())
         val resultadoConsultaLectura = baseDatosLectura.rawQuery(
             scriptConsultaLectura,
@@ -120,7 +123,9 @@ Context,): SQLiteOpenHelper(
     
     fun getAll(): MutableList<Equipo>{
         val baseDatosLectura = readableDatabase
-        val scriptConsultaLectura = "SELECT * FROM Equipo".trimIndent()
+        val scriptConsultaLectura = """
+            SELECT * FROM EQUIPO
+        """.trimIndent()
         val result = baseDatosLectura.rawQuery(
             scriptConsultaLectura,null
         )

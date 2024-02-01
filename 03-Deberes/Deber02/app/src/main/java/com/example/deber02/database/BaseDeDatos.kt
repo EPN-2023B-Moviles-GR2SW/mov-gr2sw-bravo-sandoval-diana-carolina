@@ -1,5 +1,8 @@
 package com.example.deber02.database
 
+import com.example.deber02.modelo.Equipo
+import com.example.deber02.modelo.Jugador
+
 class BaseDeDatos {
     var tablaEquipo : SqliteHelperEquipo?=null
     var tablaJugador : SqliteHelperJugador?= null
