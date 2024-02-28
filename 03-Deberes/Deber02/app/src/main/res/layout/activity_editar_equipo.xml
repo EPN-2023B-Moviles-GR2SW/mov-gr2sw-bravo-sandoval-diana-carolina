@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".agregarEquipo">
+    tools:context=".editarEquipo">
 
     <EditText
         android:id="@+id/input_editar_NombreEquipo"
@@ -72,7 +72,7 @@
         android:id="@+id/btn_GuardarCambiosEquipo"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:text="Crear Equipo"
+        android:text="Actualizar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.199"
@@ -98,7 +98,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
-        android:text="Crear Equipo"
+        android:text="Editar Equipo"
         android:textColor="#000000"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/input_editar_NombreEquipo"
@@ -107,6 +107,5 @@
         app:layout_constraintStart_toStartOf="@+id/input_editar_NombreEquipo"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.107" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

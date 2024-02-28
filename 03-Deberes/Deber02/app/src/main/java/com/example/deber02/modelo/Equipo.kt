@@ -6,7 +6,7 @@ class Equipo(val idEquipo: Int,
              val nombre: String,
              val fecha_fundacion: Int,
              val categoria: String,
-    val equipos: MutableList<Jugador>? = arrayListOf()
+             var jugadores: MutableList<Jugador>? = arrayListOf()
 ) {
     override fun toString(): String {
         return "${idEquipo}: ${nombre}"

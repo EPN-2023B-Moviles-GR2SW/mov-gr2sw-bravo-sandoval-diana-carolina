@@ -7,6 +7,6 @@ class Jugador (var idJugador: Int,
                var numero: Int
                ) {
     override fun toString(): String {
-        return " Nombre: ${nombreJugador}\n" + " " + "  ${edad} años\n" + " - " + "${estatura} cm\n" + " - " + "${numero}"
+        return " id: ${idJugador}\n"+ " Nombre: ${nombreJugador}\n" + " " + "  ${edad} años\n" + " Estatura: " + "${estatura} cm\n" + " Numero: " + "${numero}"
     }
 }

@@ -5,24 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".agregarJugador">
+    tools:context=".editarJugador">
 
     <TextView
         android:id="@+id/txt_agregar_jugador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Agregar Jugador"
+        android:text="Editar Jugador"
         android:textColor="#000000"
         android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/input__nombre_jugador"
-        app:layout_constraintEnd_toEndOf="@+id/input__nombre_jugador"
+        app:layout_constraintBottom_toTopOf="@+id/input_editar_nombre_jugador"
+        app:layout_constraintEnd_toEndOf="@+id/input_editar_nombre_jugador"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/input__nombre_jugador"
+        app:layout_constraintStart_toStartOf="@+id/input_editar_nombre_jugador"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.491" />
 
     <EditText
-        android:id="@+id/input__nombre_jugador"
+        android:id="@+id/input_editar_nombre_jugador"
         android:layout_width="300sp"
         android:layout_height="50sp"
         android:layout_marginBottom="40dp"
@@ -31,28 +31,28 @@
         android:inputType="text"
         android:textColor="#000000"
         android:textColorHint="#707070"
-        app:layout_constraintBottom_toTopOf="@+id/input_edad"
-        app:layout_constraintEnd_toEndOf="@+id/input_edad"
+        app:layout_constraintBottom_toTopOf="@+id/input_editar_edad"
+        app:layout_constraintEnd_toEndOf="@+id/input_editar_edad"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/input_edad" />
+        app:layout_constraintStart_toStartOf="@+id/input_editar_edad" />
 
     <EditText
-        android:id="@+id/idJugador"
+        android:id="@+id/input_editar_idJugador"
         android:layout_width="300sp"
         android:layout_height="50sp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="24dp"
         android:ems="10"
         android:hint="id Jugador"
         android:inputType="text"
         android:textColor="#000000"
         android:textColorHint="#707070"
-        app:layout_constraintBottom_toTopOf="@+id/input__nombre_jugador"
-        app:layout_constraintEnd_toEndOf="@+id/input__nombre_jugador"
+        app:layout_constraintBottom_toTopOf="@+id/input_editar_nombre_jugador"
+        app:layout_constraintEnd_toEndOf="@+id/input_editar_nombre_jugador"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/input__nombre_jugador" />
+        app:layout_constraintStart_toStartOf="@+id/input_editar_nombre_jugador" />
 
     <EditText
-        android:id="@+id/input_edad"
+        android:id="@+id/input_editar_edad"
         android:layout_width="300sp"
         android:layout_height="50sp"
         android:layout_marginBottom="40dp"
@@ -61,28 +61,28 @@
         android:inputType="text"
         android:textColor="#000000"
         android:textColorHint="#707070"
-        app:layout_constraintBottom_toTopOf="@+id/input_estatura"
-        app:layout_constraintEnd_toEndOf="@+id/input_estatura"
+        app:layout_constraintBottom_toTopOf="@+id/input_editar_estatura"
+        app:layout_constraintEnd_toEndOf="@+id/input_editar_estatura"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/input_estatura" />
+        app:layout_constraintStart_toStartOf="@+id/input_editar_estatura" />
 
     <EditText
-        android:id="@+id/input_estatura"
+        android:id="@+id/input_editar_estatura"
         android:layout_width="300sp"
         android:layout_height="50sp"
         android:layout_marginBottom="48dp"
         android:ems="10"
         android:hint="Estatura"
-        android:inputType="numberDecimal"
         android:textColor="#000000"
         android:textColorHint="#707070"
-        app:layout_constraintBottom_toTopOf="@+id/input_numero"
-        app:layout_constraintEnd_toEndOf="@+id/input_numero"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/input_editar_numero"
+        app:layout_constraintEnd_toEndOf="@+id/input_editar_numero"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/input_numero" />
+        app:layout_constraintStart_toStartOf="@+id/input_editar_numero" />
 
     <EditText
-        android:id="@+id/input_numero"
+        android:id="@+id/input_editar_numero"
         android:layout_width="300sp"
         android:layout_height="50sp"
         android:layout_marginBottom="52dp"
@@ -100,7 +100,7 @@
         android:id="@+id/btn_guardarN_jugador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Crear "
+        android:text="Actualizar "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.16"
