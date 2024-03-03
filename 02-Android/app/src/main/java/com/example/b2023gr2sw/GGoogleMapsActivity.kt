@@ -5,8 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.google.android.gms.maps.CameraUpdate
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
+import com.google.android.gms.maps.model.MarkerOptions
 
 class GGoogleMapsActivity : AppCompatActivity() {
     private lateinit var mapa: GoogleMap
@@ -25,9 +30,35 @@ class GGoogleMapsActivity : AppCompatActivity() {
             with(googleMap) {
                 mapa = googleMap
                 establecerConfiguracionMapa()
+                moverQuicentro()
             }
         }
     }
+
+    fun moverQuicentro(){
+        val zoom = 17f
+        val quicentro = LatLng(
+            -0.1773730540284852, -78.48091548176174
+        )
+        val titulo = "Quicentro"
+        val markQuicentro = anadirMarcador(
+            quicentro,titulo
+        )
+        markQuicentro.tag = titulo
+        moverCamaraConZoom(quicentro,zoom)
+    }
+    fun anadirMarcador(latLng: LatLng, title:String): Marker{
+        return mapa.addMarker(
+            MarkerOptions().position(latLng).title(title)
+        )!!
+        
+    }
+    fun moverCamaraConZoom(latLng: LatLng, zoom: Float =10f){
+        mapa.moveCamera(CameraUpdateFactory.newLatLngZoom(
+            latLng,zoom
+        ))
+    }
+
 
     fun establecerConfiguracionMapa(){
         val contexto = this.applicationContext
