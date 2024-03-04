@@ -1,11 +1,13 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.firebase.appdistribution")
+    id("com.google.gms.google-services")
 }
 
 android {
     namespace = "com.example.deber03whatssap"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.deber03whatssap"
@@ -36,6 +38,9 @@ android {
 }
 
 dependencies {
+    //glide android library Import
+    implementation ("com.github.bumptech.glide:glide:4.14.2")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.14.2")
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -44,4 +49,6 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
+
 }

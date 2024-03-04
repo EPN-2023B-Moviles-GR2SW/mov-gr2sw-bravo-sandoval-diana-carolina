@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Deber03Whatssap"
         tools:targetApi="31">
         <activity
+            android:name=".Estados"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
