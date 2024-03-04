@@ -48,7 +48,7 @@ class FRecyclerViewAdaptadorNombreDescripcion(
         val itemView = LayoutInflater
             .from(parent.context)
             .inflate(
-                R.layout.recycler_view_vista,
+                R.layout.activity_recycler_view_vista,
                 parent,
                 false
             )
