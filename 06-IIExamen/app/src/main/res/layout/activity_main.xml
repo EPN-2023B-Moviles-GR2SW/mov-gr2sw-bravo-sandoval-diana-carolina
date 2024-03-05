@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txtBienvenido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="Bienvenido"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/imgFutbol"
+        app:layout_constraintEnd_toEndOf="@+id/imgFutbol"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="@+id/imgFutbol"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imgFutbol"
+        android:layout_width="101dp"
+        android:layout_height="105dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtEquipos"
+        app:layout_constraintEnd_toEndOf="@+id/txtEquipos"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="@+id/txtEquipos"
+        app:srcCompat="@drawable/football" />
+
+    <ListView
+        android:id="@+id/lv_listarEquipo"
+        style="@style/Widget.AppCompat.Light.ListView.DropDown"
+        android:layout_width="229dp"
+        android:layout_height="265dp"
+        android:layout_marginBottom="68dp"
+        android:background="@color/white"
+        android:backgroundTint="#D148E8"
+        android:cacheColorHint="#FBFBFB"
+        android:textColor="#100F0F"
+        app:layout_constraintBottom_toTopOf="@+id/btn_ir_Agregarequipo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtEquipos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="Equipos"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/lv_listarEquipo"
+        app:layout_constraintEnd_toEndOf="@+id/lv_listarEquipo"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/lv_listarEquipo" />
+
+    <Button
+        android:id="@+id/btn_ir_Agregarequipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.875" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
