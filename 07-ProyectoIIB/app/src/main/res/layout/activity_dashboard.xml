@@ -7,11 +7,52 @@
     android:background="#FFFFFF"
     tools:context=".dashboard">
 
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="409dp"
+        android:layout_height="88dp"
+        android:background="@color/botones"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="106dp"
+            android:layout_height="62dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="28dp"
+
+            android:layout_marginBottom="16dp"
+
+            android:layout_weight="0"
+            android:padding="0dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/logo" />
+
+        <ImageView
+
+            android:id="@+id/imgUsuario"
+            android:layout_width="177dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="15dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/black"
+            android:src="@drawable/usuario"
+            app:tint="@color/white" />
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/txt_NoteOlvidesVer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="170dp"
+        android:layout_height="30dp"
         android:layout_marginTop="96dp"
+        android:layout_marginBottom="20dp"
         android:text="No te olvides de ver"
         android:textColor="@color/botones"
         android:textSize="18sp"
@@ -21,13 +62,13 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/rv_peliculasPorVer"
         app:layout_constraintTop_toBottomOf="@+id/imgLogo"
-        app:layout_constraintVertical_bias="0.206" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/txt_mirarNuevamente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
+        android:layout_width="156dp"
+        android:layout_height="28dp"
+        android:layout_marginBottom="20dp"
         android:text="Mirar Nuevamente"
         android:textColor="@color/botones"
         android:textSize="18sp"
@@ -41,17 +82,19 @@
         android:id="@+id/rv_peliculasPorVer"
         android:layout_width="345dp"
         android:layout_height="144dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="36dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/txt_mirarNuevamente"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.424"
         app:layout_constraintStart_toStartOf="parent" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_peliculas_vistas"
         android:layout_width="345dp"
         android:layout_height="144dp"
-        android:layout_marginBottom="124dp"
+        android:layout_marginBottom="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.424"
@@ -60,120 +103,63 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="409dp"
-        android:layout_height="36dp"
-        android:layout_marginBottom="40dp"
+        android:layout_height="88dp"
+        android:background="@color/botones"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rv_peliculas_vistas"
-        app:layout_constraintVertical_bias="0.77">
+        app:layout_constraintVertical_bias="1.0">
 
-        <Button
-            android:id="@+id/btn_Home"
-            android:layout_width="50dp"
-            android:layout_height="36dp"
-            android:layout_marginStart="100dp"
-            android:background="@drawable/ic_home"
-            android:text=""
-            android:textColor="#FFFFFF"
-            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/txtHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_home"
+            android:gravity="center"
+            android:text="Home"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
-        <Button
-            android:id="@+id/btn_AgregarPelicula"
-            android:layout_width="50dp"
-            android:layout_height="36dp"
-            android:layout_marginStart="100dp"
-            android:background="@drawable/ic_cinedp"
-            android:backgroundTint="@color/botones"
-            android:text=""
-            android:textColor="#FFFFFF"
-            android:textSize="14sp"
-            app:iconTint="@color/botones"
-            app:strokeColor="@color/botones" />
-
+        <TextView
+            android:id="@+id/txtAgregar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_cinedp"
+            android:gravity="center"
+            android:text="Nuevo"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_Buscar"
-        android:layout_width="49dp"
-        android:layout_height="33dp"
-        android:layout_marginEnd="80dp"
-        android:background="@drawable/ic_buscar"
-        android:text=""
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editTextText" />
-
-    <ImageView
-        android:id="@+id/imgUsuario"
-        android:layout_width="80dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="28dp"
-        android:layout_weight="0"
-        android:backgroundTint="@color/black"
-        android:src="@drawable/usuario"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.974"
-        app:layout_constraintStart_toEndOf="@+id/imgLogo"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imgLogo"
-        android:layout_width="80dp"
-        android:layout_height="62dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="16dp"
-        android:padding="0dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/logo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/txtHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="8dp"
-        android:text="Home"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/txtAgregar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Nuevo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toEndOf="@+id/txtHome"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="215dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginBottom="32dp"
+        android:id="@+id/label_rpass"
+        android:layout_width="310dp"
+        android:layout_height="45dp"
+
+        android:layout_marginBottom="28dp"
+        android:drawableRight="@drawable/ic_buscar"
+        android:drawablePadding="8dp"
         android:ems="10"
-        android:hint="Buscar Pelicula"
-        android:inputType="text"
-        android:textColorHint="@color/botones"
-        android:textSize="15dp"
+        android:hint="Buscar Película"
+        android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/txt_NoteOlvidesVer"
-        app:layout_constraintEnd_toStartOf="@+id/btn_Buscar"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgLogo"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

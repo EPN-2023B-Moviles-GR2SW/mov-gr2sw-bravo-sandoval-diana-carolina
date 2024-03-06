@@ -11,7 +11,7 @@ class dashboard : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
         inicializarRecyclerViewPeliculasVer()
-        //inicializarRecycleViewPeliculasVistas()
+        inicializarRecycleViewPeliculasVistas()
     }
         fun inicializarRecyclerViewPeliculasVer(){
             val recyclerView = findViewById<RecyclerView>(R.id.rv_peliculasPorVer)
@@ -31,15 +31,15 @@ class dashboard : AppCompatActivity() {
             adaptador.notifyDataSetChanged()
         }
 
-        /*fun inicializarRecyclerViewJuegosNuevos(){
-            val recyclerView = findViewById<RecyclerView>(R.id.rv_juegos_nuevos)
+        fun inicializarRecycleViewPeliculasVistas(){
+            val recyclerView = findViewById<RecyclerView>(R.id.rv_peliculas_vistas)
 
             // Configura el LinearLayoutManager con orientación horizontal
             val layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
-            val adaptador = RVAdaptJuegosPopulares(
+            val adaptador = AdaptadorPeliculasVistas(
                 this,
-                BaseDeDatos.arregloJuegosNuevos,
+                BaseDatos.arregloPeliculasVistas,
                 recyclerView
             )
 
@@ -49,5 +49,5 @@ class dashboard : AppCompatActivity() {
             adaptador.notifyDataSetChanged()
 
 
-    }*/
+    }
 }
