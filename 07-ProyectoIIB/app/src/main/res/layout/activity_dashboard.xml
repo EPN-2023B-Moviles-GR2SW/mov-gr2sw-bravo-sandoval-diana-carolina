@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".dashboard">
+
+    <TextView
+        android:id="@+id/txt_NoteOlvidesVer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:text="No te olvides de ver"
+        android:textColor="@color/botones"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rv_peliculasPorVer"
+        app:layout_constraintEnd_toEndOf="@+id/rv_peliculasPorVer"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/rv_peliculasPorVer"
+        app:layout_constraintTop_toBottomOf="@+id/imgLogo"
+        app:layout_constraintVertical_bias="0.206" />
+
+    <TextView
+        android:id="@+id/txt_mirarNuevamente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:text="Mirar Nuevamente"
+        android:textColor="@color/botones"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rv_peliculas_vistas"
+        app:layout_constraintEnd_toEndOf="@+id/rv_peliculas_vistas"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/rv_peliculas_vistas" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_peliculasPorVer"
+        android:layout_width="345dp"
+        android:layout_height="144dp"
+        android:layout_marginBottom="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/txt_mirarNuevamente"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_peliculas_vistas"
+        android:layout_width="345dp"
+        android:layout_height="144dp"
+        android:layout_marginBottom="124dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.424"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="409dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_peliculas_vistas"
+        app:layout_constraintVertical_bias="0.77">
+
+        <Button
+            android:id="@+id/btn_Home"
+            android:layout_width="50dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="100dp"
+            android:background="@drawable/ic_home"
+            android:text=""
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btn_AgregarPelicula"
+            android:layout_width="50dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="100dp"
+            android:background="@drawable/ic_cinedp"
+            android:backgroundTint="@color/botones"
+            android:text=""
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            app:iconTint="@color/botones"
+            app:strokeColor="@color/botones" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_Buscar"
+        android:layout_width="49dp"
+        android:layout_height="33dp"
+        android:layout_marginEnd="80dp"
+        android:background="@drawable/ic_buscar"
+        android:text=""
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextText" />
+
+    <ImageView
+        android:id="@+id/imgUsuario"
+        android:layout_width="80dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="28dp"
+        android:layout_weight="0"
+        android:backgroundTint="@color/black"
+        android:src="@drawable/usuario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.974"
+        app:layout_constraintStart_toEndOf="@+id/imgLogo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="80dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
+        android:padding="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="8dp"
+        android:text="Home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/txtAgregar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Nuevo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toEndOf="@+id/txtHome"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="215dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginBottom="32dp"
+        android:ems="10"
+        android:hint="Buscar Pelicula"
+        android:inputType="text"
+        android:textColorHint="@color/botones"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_NoteOlvidesVer"
+        app:layout_constraintEnd_toStartOf="@+id/btn_Buscar"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgLogo"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,32 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#BDF3B3"
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/txt_Ya_Tienes_Cuenta2"
+        android:id="@+id/txt_irRegistrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginBottom="236dp"
         android:text="¿Aún no tienes una cuenta? Regístrate"
         android:textColor="#B8B8B8"
-        app:layout_constraintEnd_toEndOf="@+id/btn_Login"
-        app:layout_constraintStart_toStartOf="@+id/btn_Login"
-        app:layout_constraintTop_toBottomOf="@+id/btn_Login" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/input_Login_Correo"
-        android:layout_width="350dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/inputs_personalizados"
-        android:hint="Usuario"
-        android:paddingStart="16dp"
-        android:textColorHint="#A3595959"
-        app:layout_constraintEnd_toEndOf="@+id/txt_Login"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="@+id/txt_Login"
-        app:layout_constraintTop_toBottomOf="@+id/txt_Ingresa_Datos2" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnVista" />
 
     <TextView
         android:id="@+id/txt_Ingresa_Datos2"
@@ -69,34 +57,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/avatarlogin" />
 
-    <EditText
-        android:id="@+id/input_Login_Contrasenia"
-        android:layout_width="350dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/inputs_personalizados"
-        android:ems="10"
-        android:hint="Contraseña"
-        android:inputType="textPassword"
-        android:paddingStart="16dp"
-        android:textColorHint="#A3595959"
-        app:layout_constraintEnd_toEndOf="@+id/input_Login_Correo"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/input_Login_Correo"
-        app:layout_constraintTop_toBottomOf="@+id/input_Login_Correo" />
-
     <Button
-        android:id="@+id/btn_Login"
-        android:layout_width="117dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="48dp"
-        android:backgroundTint="@color/botones"
-
-        android:text="Ingresar"
-        android:textColor="#FDFDFD"
-        app:layout_constraintEnd_toEndOf="@+id/input_Login_Contrasenia"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="@+id/input_Login_Contrasenia"
-        app:layout_constraintTop_toBottomOf="@+id/input_Login_Contrasenia" />
+        android:id="@+id/btnVista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="340dp"
+        android:text="irRecycle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
